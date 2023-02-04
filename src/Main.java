@@ -29,7 +29,7 @@ public class Main {
     private static void MyPhone(int os, int productionYear) {
         if (productionYear <= 2015 && os <= 1) {
             System.out.println(" Необходимо установить облегченную версию приложения для iOS по ссылке. ");
-        } else {
+        } else  {
             System.out.println("Необходимо установить облегченную версию приложения для Android по ссылке");
             if (productionYear > 2014) {
                 System.out.println(" Для пользователей телефонов " + productionYear +
