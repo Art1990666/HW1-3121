@@ -5,10 +5,10 @@ public class Main {
         leapYear(year);
 
         //2
-        MyPhone(1, 2015);
+        MyPhone(2, 2015);
 
         //3
-        int kilometer = 15;
+        int kilometer = 110;
         int days = Days(kilometer);
         if (days == -1) {
             System.out.println(" Доставка невозможна на расстояние " + kilometer + " киллометров.");
@@ -26,14 +26,14 @@ public class Main {
         }
     }
 
-
     private static void MyPhone(int os, int productionYear) {
         if (productionYear <= 2015 && os <= 1) {
             System.out.println(" Необходимо установить облегченную версию приложения для iOS по ссылке. ");
         } else {
             System.out.println("Необходимо установить облегченную версию приложения для Android по ссылке");
             if (productionYear > 2014) {
-                System.out.println(" Для пользователей телефонов " + productionYear + " года выпуска и позже необходимо " +
+                System.out.println(" Для пользователей телефонов " + productionYear +
+                        " года выпуска и позже необходимо " +
                         "установить обычные версии приложений для iOS и Android по ссылке");
             }
         }
@@ -47,7 +47,7 @@ public class Main {
         } else if (kilometer > 60 && kilometer <= 100) {
             return 3;
         } else {
-            return 3;
+            return -1;
         }
     }
 }
