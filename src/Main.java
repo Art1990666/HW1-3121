@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class Main {
     public static void main(String[] args) {
         //1
@@ -5,7 +7,7 @@ public class Main {
         leapYear(year);
 
         //2
-        MyPhone(2, 2015);
+        myPhone(2, 2016);
 
         //3
         int kilometer = 110;
@@ -26,15 +28,14 @@ public class Main {
         }
     }
 
-    private static void MyPhone(int os, int productionYear) {
-        if (productionYear <= 2015 && os <= 1) {
-            System.out.println(" Необходимо установить облегченную версию приложения для iOS по ссылке. ");
-        } else  {
-            System.out.println("Необходимо установить облегченную версию приложения для Android по ссылке");
-            if (productionYear > 2014) {
-                System.out.println(" Для пользователей телефонов " + productionYear +
-                        " года выпуска и позже необходимо " +
-                        "установить обычные версии приложений для iOS и Android по ссылке");
+    private static void myPhone(int os, int productionYear) {
+        int currentYear = LocalDate.now().getYear();
+        if (productionYear < currentYear && productionYear <= 2015 && os <= 1) {
+            System.out.println("Установить облегченную версию приложения для Android по ссылке. ");
+        } else {
+            System.out.println("Установить облегченную версию приложения для iOS по ссылке. ");
+            if (productionYear < currentYear && productionYear >= 2016) {
+                System.out.println("Необходимо установить обычную версию для Android или iOS. ");
             }
         }
     }
